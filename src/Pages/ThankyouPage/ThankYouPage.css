@@ -1,0 +1,18 @@
+.thanksPage{
+    margin-top: 70px;
+    padding: 20px;
+    background-color: #fff;
+}
+.thanksPage h2{
+    color: #7432F9;
+}
+
+
+
+
+
+@media (max-width: 576px) {
+    .thankyou-container{
+        margin-top: 50px;
+    }
+}

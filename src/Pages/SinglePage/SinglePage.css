@@ -1,0 +1,56 @@
+.singlePage-container{
+    margin-top: 62px;
+}
+.singlePage-section{
+    margin-top: 15px;
+    background-color: #fff;
+}
+.img-section{
+    padding: 15px;
+}
+.img-section img{
+    height: 300px;
+    width: 100%;
+}
+.more-img {
+    display: flex;
+    gap: 10px; 
+}
+
+.more-img img {
+    height: 80px;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.more-img img:hover {
+    border: 2px solid #7432F9;
+}
+
+.productdatils p{
+    margin: 0;
+    font-size: 18px;
+}
+.price-part p{
+   margin: 0;
+}
+
+.offer p{
+    font-size: 15px;
+}
+
+@media (max-width: 576px) {
+    .singlePage-container{
+        margin-top: 110px;
+    }
+    .more-img {
+        gap: 5px; 
+    }
+    .more-img img {
+        height: 70px;
+        object-fit: cover;
+        box-sizing: border-box;
+    }
+}
+
+

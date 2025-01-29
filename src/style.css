@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.home-page{
+    background-color: #dfd9d9;
+}
+
+.main-color{
+    color: #7432F9 !important;
+  }
+  .main-btn{
+    background-color: #7432F9 !important;
+    color: #fff !important;
+  }
+  .main-btn:hover{
+    color: #000!important;
+  }
+  .black-hovr:hover{
+    color: #000 !important;
+  }

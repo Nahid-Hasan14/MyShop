@@ -1,0 +1,27 @@
+.custom-profile{
+    margin-top: 63px !important;
+    padding-top: 52px !important;
+}
+.profile{
+    background-color: #fff;
+}
+.custom-img{
+    height: 250px;
+}
+.profileAddressBook{
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #7432F9;
+    border-radius: 5px;
+}
+.address-title{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #7432F9;
+}
+.manage-account ul li{
+    list-style: none;
+    font-size: 18px;
+}
+.manage-account ul li:hover{
+    color: #7432F9;
+}

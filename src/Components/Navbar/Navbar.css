@@ -1,0 +1,46 @@
+.navbar-logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+.navbar-section {
+    flex: 1;
+  }
+.navbar-section.middle {
+    text-align: center;
+}
+.nav-icons a i{
+    margin-left: 15px;
+    font-size: 1.3rem;
+    color: #fff;
+}
+.navbar {
+    background-color: #7432F9;
+    padding: 10px;
+}
+.nav-item a {
+    color: #fff;
+    font-size: 20px;
+}
+.dropdown-menu {
+    left: 40%;
+    transform: translateX(-40%);
+    min-width: 200px; /* Optional for consistent width */
+}
+
+       /* page dropdown style */
+.custom-dropdown {
+    background-color: white !important;
+    border: 1px solid #ddd; 
+}
+
+.custom-dropdown .dropdown-item {
+    color: black !important; 
+    font-size: 17px;
+}
+
+.custom-dropdown .dropdown-item:hover {
+    background-color: #f8f9fa; 
+    color: #000 !important; 
+}
+  

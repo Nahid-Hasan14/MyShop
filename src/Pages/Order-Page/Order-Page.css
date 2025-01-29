@@ -1,0 +1,13 @@
+.order-img{
+    height: 100px;
+    width: 100%;
+}
+.category-border{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #7432F9;
+}
+.show-order{
+    margin: 7px 0px 7px 0px;
+    padding: 7px;
+    background-color: #fff;
+}

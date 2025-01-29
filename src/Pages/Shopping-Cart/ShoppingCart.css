@@ -1,0 +1,112 @@
+.cart-container{
+    margin-top: 40px !important;
+} 
+.custom-left-main{
+    background-color: #fff;
+    padding: 10px;
+}
+.products-img{
+    height: 180px;
+    width: 100%;
+}
+
+.single-border {
+    font-weight: bold; 
+    border: 3px solid #7432F9;    
+    border-radius: 20px;    
+    padding: 2px;                
+    display: inline-flex;     
+    gap: 5px;                    
+    align-items: center;         
+    width: 110px;
+}
+  
+.single-border span {
+    padding: 1px 5px;         
+    text-align: center;        
+}
+.truncate-text{
+    font-size: 18px;
+}
+  .subtotal{
+    font-size: 20px;
+    
+}
+
+.proceetToCheckout{
+    margin-left: 15px ;
+    padding: 15px;
+    background-color: #fff;
+
+}
+.primeNotice{
+    background-color: #fff;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+.primeNotice img{
+    height: 40px;
+}
+.pair-section {
+    background-color: #fff;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+.pair-products {
+    padding: 10px 0px;
+}
+.pair-products img{
+    height: 100px;
+    width: 100px;
+}
+
+.addToCart-btn {
+    border: none;
+    padding: 2px 11px;
+    background-color: blue;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 7px;
+}
+.addToCart-btn:hover{
+    color: #000;
+}
+  
+  
+
+
+
+
+@media (max-width: 576px) {
+    .cart-container{
+        margin-top: 80px !important;
+    }
+    .truncate-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Adjust lines based on word count approximation */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    .proceetToCheckout{
+        margin: 0px;
+        padding: 10px 0;
+    }
+    .primeNotice{
+        margin-left: 0px;
+    }
+    .pair-section{
+        margin-left: 0px;
+    }
+    .short-text{
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Adjust lines based on word count approximation */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }  
+}

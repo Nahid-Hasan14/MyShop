@@ -1,0 +1,33 @@
+.off-section{
+    background-color: #DFE2DF;
+}
+.products-view{
+    background-color: #fff;
+    padding: 15px;
+    margin-top: 10px;
+}
+.off-heading{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.off-icon {
+    font-size: 27px;
+    color: blue
+}
+.off-item {
+    padding: 12px;
+}
+.off-item p{
+    margin: 0;
+    font-size: 19px;
+}
+.off-item img{
+    height: 150px;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+.off-item:hover img{
+    transform: scale(1.1);
+}

@@ -1,0 +1,9 @@
+.video-container video {
+    max-height: 400px;
+    object-fit: cover;
+  }
+  
+  .about-us .rounded-circle {
+    border: 2px solid #ddd;
+  }
+  

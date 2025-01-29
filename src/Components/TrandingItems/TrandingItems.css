@@ -1,0 +1,21 @@
+.tranding{
+    background-color: #fff;
+    margin: 1px !important;
+    padding: 10px;
+}
+.tranding-item{
+    padding: 7px;
+    border: 1px solid rgb(179, 173, 173);
+    border-radius: 5px ;
+    margin-bottom: 5px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: perspective(1000px);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+.tranding-item:hover {
+    transform: perspective(1000px) rotateY(10deg) scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+.tranding-item img{
+    height: 120px;
+}

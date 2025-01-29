@@ -1,0 +1,16 @@
+.footer-section{
+    background-color: #7432F9;
+}
+.about-us{
+    color: #fff;
+    
+}
+.about-us p{
+    margin: 0;
+    cursor: pointer;
+    font-size: 17px;
+}
+.about-us p:hover{
+    text-decoration: underline;
+    color: black;
+}
