@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -40,19 +41,19 @@ export default function Navbar() {
                     </a>
                     <ul className="dropdown-menu custom-dropdown">
                       <li>
-                        <a className="dropdown-item" href="#">
+                        <Link to={"/"} className="dropdown-item " >
                           Home
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="#">
+                        <Link to={"/about-us"} className="dropdown-item ">
                           About
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="#">
+                        <Link to={"/contact-us"} className="dropdown-item ">
                           Contact
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </li>

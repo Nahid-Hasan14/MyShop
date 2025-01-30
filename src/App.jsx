@@ -1,10 +1,9 @@
-import React from 'react'
-import Home from './Pages/Home'
+import MainLayout from './MainLayout/MainLayout'
 
 export default function App() {
   return (
     <div>
-      <Home />
+       <MainLayout />
     </div>
   )
 }
