@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import "./OffProducts.css"
 import { FaChevronCircleRight } from "react-icons/fa";
 
-const OffProducts = () => {
+const OffProducts = ({menClothing, womenClothing, jewelery}) => {
   return (
     <div>
       <section className='off-section'>
@@ -10,18 +11,22 @@ const OffProducts = () => {
                 <div className='col-lg-4 col-12'>
                     <div className='products-view'>
                         <div className="off-heading">
-                           <h4>Winter Essentials For you</h4>
+                           <h4>{womenClothing.length > 0 ? womenClothing[0].category : "Best product for you"}</h4>
                            <FaChevronCircleRight className="off-icon"/>
                         </div>
                         <div className='row'>
-                            <div className=' col-6 px-2'>
+                         {
+                            womenClothing.slice(0, 4).map(product => (
+                                <div key={product.id} className=' col-6 px-2 mb-2'>
                             <div className='off-item border rounded'>
-                                <img src="./img/winter1.jpg" className="img img-fluid rounded"/>
-                                <p className="mt-2">Product Name</p>
+                                <img src={product.image} className="img img-fluid rounded"/>
+                                <p className="mt-2">{product.title.substring(0, 12)}...</p>
                                 <p className="text-success">Min.10% OFF</p>
                             </div>
                             </div>
-                            <div className=' col-6 px-2'>
+                            ))
+                         }
+                            {/* <div className=' col-6 px-2'>
                             <div className='off-item border rounded mb-2'>
                                 <img src="./img/winter2.jpg" className="img img-fluid rounded"/>
                                 <p className="mt-2">Product Name</p>
@@ -41,25 +46,30 @@ const OffProducts = () => {
                                 <p className="mt-2">Product Name</p>
                                 <p className="text-success">Min.10% OFF</p>
                             </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
                 <div className='col-lg-4 col-12'>
                     <div className='products-view'>
                         <div className="off-heading">
-                           <h4>Winter Essentials For you</h4>
+                           <h4>{menClothing.length > 0 ? menClothing[0].category : "Best Product for You"}</h4>
                            <FaChevronCircleRight className="off-icon"/>
                         </div>
                         <div className='row'>
-                            <div className='col-6 px-2'>
+                        {
+                            menClothing.slice(0, 4).map(product => (
+                                <div key={product.id} className='col-6 px-2 mb-2'>
                             <div className='off-item border rounded'>
-                                <img src="./img/winter1.jpg" className="img img-fluid rounded"/>
-                                <p className="mt-2">Product Name</p>
+                                <img src= {product.image} className="img img-fluid rounded"/>
+                                <p className="mt-2">{product.title.substring(0, 12)}...</p>
                                 <p className="text-success">Min.10% OFF</p>
                             </div>
                             </div>
-                            <div className='col-6 px-2'>
+                            ))
+                        }
+                            
+                            {/* <div className='col-6 px-2'>
                             <div className='off-item border rounded mb-2'>
                                 <img src="./img/winter2.jpg" className="img img-fluid rounded"/>
                                 <p className="mt-2">Product Name</p>
@@ -79,25 +89,30 @@ const OffProducts = () => {
                                 <p className="mt-2">Product Name</p>
                                 <p className="text-success">Min.10% OFF</p>
                             </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
                 <div className='col-lg-4 col-12'>
                     <div className='products-view'>
                         <div className="off-heading">
-                           <h4>Winter Essentials For you</h4>
+                           <h4>{jewelery.length > 0 ? jewelery[0].category : "Best Product for You"}</h4>
                            <FaChevronCircleRight className="off-icon"/>
                         </div>
                         <div className='row'>
-                            <div className='col-6 px-2'>
+                        {
+                            jewelery.slice(0,4).map(product=> (
+                                <div key={product.id} className='col-6 px-2 mb-2'>
                             <div className='off-item border rounded'>
-                                <img src="./img/winter1.jpg" className="img img-fluid rounded"/>
-                                <p className="mt-2">Product Name</p>
+                                <img src= {product.image} className="img img-fluid rounded"/>
+                                <p className="mt-2">{product.title.substring(0,12)}...</p>
                                 <p className="text-success">Min.10% OFF</p>
                             </div>
                             </div>
-                            <div className='col-6 px-2'>
+                            ))
+                        }
+                            
+                            {/* <div className='col-6 px-2'>
                             <div className='off-item border rounded mb-2'>
                                 <img src="./img/winter2.jpg" className="img img-fluid rounded"/>
                                 <p className="mt-2">Product Name</p>
@@ -117,7 +132,7 @@ const OffProducts = () => {
                                 <p className="mt-2">Product Name</p>
                                 <p className="text-success">Min.10% OFF</p>
                             </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -128,4 +143,4 @@ const OffProducts = () => {
   )
 }
 
-export default OffProducts
+export default OffProducts;

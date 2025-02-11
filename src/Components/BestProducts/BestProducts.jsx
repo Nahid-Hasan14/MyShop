@@ -1,6 +1,8 @@
+/* eslint-disable react/prop-types */
 import "./BestProducts.css"
 
-const BestProducts = () => {
+const BestProducts = ({data}) => {
+
   return (
     <div>
       <section className="best-section">
@@ -10,15 +12,19 @@ const BestProducts = () => {
               <div className="bestProducts p-3">
                 <h3 className="py-2">Best Of Cetagory</h3>
                 <div className="row">
-                  <div className="col-lg-3 col-6 best-products">
+                 {data.slice(0, 4).map(product=> {
+                  const {title, price, id, image}= product;
+                  return (
+                  <div key={id} className="col-lg-3 col-6 best-products">
                     <div className="border border-secondary-subtle product-item text-center">
-                      <img src="./img/dron1.jpg" className="img img-fluid" alt="N/A"/>
-                      <h6>Dron Title 2024</h6>
-                      <p><b>$ 430</b></p>
-                      <button className="btn btn-info">Cart</button>
+                      <img src= {image} className="img img-fluid" alt="N/A"/>
+                      <h6>{title.substring(0, 45)}...</h6>
+                      <p><b>$ {price}</b></p>
+                      <button className="btn btn-info">Add to Cart</button>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-6 best-products">
+                 )})}
+                  {/* <div className="col-lg-3 col-6 best-products">
                     <div className="border border-secondary-subtle product-item text-center">
                       <img src="./img/dron2.jpg" className="img img-fluid" />
                       <h6>Dron Title 2024</h6>
@@ -41,7 +47,7 @@ const BestProducts = () => {
                       <p><b>$ 430</b></p>
                       <button className="btn btn-info">Cart</button>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

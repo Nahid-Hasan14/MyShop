@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { FaChevronCircleRight } from "react-icons/fa"
 import "./UnderHOffer.css"
-const UnderHOffer = () => {
+const UnderHOffer = ({underOffer}) => {
   return (
     <div>
         <section className="under-offer-section">
@@ -13,14 +14,19 @@ const UnderHOffer = () => {
                   <a><b>See all</b> <FaChevronCircleRight className="text-success"/></a>
                 </div>
                 <div className="row">
-                  <div className="col-lg-2 col-6 under-products">
+                {
+                  underOffer.slice(0, 6).map(product =>(
+                    <div key={product.id} className="col-lg-2 col-6 under-products">
                     <div className="border border-secondary-subtle product-item text-center">
-                      <img src="./img/dron1.jpg" className="img img-fluid" alt="N/A"/>
-                      <h6 className="mt-2">Dron Title 2024</h6>
-                      <p><b>Under $100</b></p>
+                      <img src= {product.image} className="img img-fluid" alt="N/A"/>
+                      <h6 className="mt-2">{product.title.substring(0, 18)}....</h6>
+                      <p><b>{product.price}</b></p>
                     </div>
                   </div>
-                  <div className="col-lg-2 col-6 under-products">
+                  ))
+                }
+                  
+                  {/* <div className="col-lg-2 col-6 under-products">
                     <div className="border border-secondary-subtle product-item text-center">
                       <img src="./img/dron2.jpg" className="img img-fluid" />
                       <h6 className="mt-2">Dron Title 2024</h6>
@@ -54,7 +60,7 @@ const UnderHOffer = () => {
                       <h6 className="mt-2">Dron Title 2024</h6>
                       <p><b>Under $100</b></p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
