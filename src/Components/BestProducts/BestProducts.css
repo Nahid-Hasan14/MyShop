@@ -14,6 +14,7 @@
     overflow: hidden;
 }
 .product-item img{
+    cursor: pointer;
     height: 150px;
     width: 100%;
     transition: transform 0.3s ease;
@@ -22,6 +23,7 @@
     transform: scale(1.1);
 }
 .product-item h6{
+    cursor: pointer;
     margin: 0;
     padding-top: 7px;
 }

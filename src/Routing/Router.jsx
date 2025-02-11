@@ -25,7 +25,7 @@ const router = createBrowserRouter([
                 element: <ContactUs />
             },
             {
-                path: "/category",
+                path: "/category/:category",
                 element: <CategoryPage />
             }
         ]

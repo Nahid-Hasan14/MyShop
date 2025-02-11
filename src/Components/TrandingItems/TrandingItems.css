@@ -4,6 +4,7 @@
     padding: 10px;
 }
 .tranding-item{
+    cursor: pointer;
     padding: 7px;
     border: 1px solid rgb(179, 173, 173);
     border-radius: 5px ;

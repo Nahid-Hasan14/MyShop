@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { FaChevronCircleRight } from "react-icons/fa"
 import "./UnderHOffer.css"
+import { Link } from "react-router-dom"
 const UnderHOffer = ({underOffer}) => {
   return (
     <div>
@@ -11,15 +12,15 @@ const UnderHOffer = ({underOffer}) => {
               <div className="under-offer p-3">
                 <div className="under-offer-heading">
                   <h3 className="py-2">Under $100</h3>
-                  <a><b>See all</b> <FaChevronCircleRight className="text-success"/></a>
+                  <Link to={`/category/${underOffer.length > 0 ? underOffer[0].category : "Under 100 offer"}`} state={{data: underOffer}}><a><b>See all</b> <FaChevronCircleRight className="text-success"/></a></Link>
                 </div>
                 <div className="row">
                 {
                   underOffer.slice(0, 6).map(product =>(
                     <div key={product.id} className="col-lg-2 col-6 under-products">
                     <div className="border border-secondary-subtle product-item text-center">
-                      <img src= {product.image} className="img img-fluid" alt="N/A"/>
-                      <h6 className="mt-2">{product.title.substring(0, 18)}....</h6>
+                      <Link to={`/category/${product.category}`} state={{data: underOffer}}><img src= {product.image} className="img img-fluid" alt="N/A"/></Link>
+                      <Link to={`/category/${product.category}`} state={{data: underOffer}}><h6 className="mt-2">{product.title.substring(0, 18)}....</h6></Link>
                       <p><b>{product.price}</b></p>
                     </div>
                   </div>

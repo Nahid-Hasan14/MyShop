@@ -13,6 +13,7 @@
     align-items: center;
 }
 .off-icon {
+    cursor: pointer;
     font-size: 27px;
     color: blue
 }
@@ -20,10 +21,12 @@
     padding: 12px;
 }
 .off-item p{
+    cursor: pointer;
     margin: 0;
     font-size: 19px;
 }
 .off-item img{
+    cursor: pointer;
     height: 150px;
     width: 100%;
     transition: transform 0.5s ease;

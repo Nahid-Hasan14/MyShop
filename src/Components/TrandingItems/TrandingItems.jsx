@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom"
 import "./TrandingItems.css"
 const TrandingItems = ({data}) => {
   return (
@@ -15,10 +16,10 @@ const TrandingItems = ({data}) => {
                             <div className='tranding-item'>
                                 <div className='row'>
                                     <div className='col-4'>
-                                        <img src= {product.image} className="img-fluid"/>
+                                        <Link to={`/category/${product.category}`} state={{data: data}}><img src= {product.image} className="img-fluid"/></Link>
                                     </div>
                                     <div className='col-8'>
-                                        <p>{product.title.substring(0, 50)}...</p>
+                                        <Link to={`/category/${product.category}`} state={{data: data}}><p>{product.title.substring(0, 50)}...</p></Link>
                                         <p><b>$ {product.price}</b></p>
                                     </div>
                                 </div>

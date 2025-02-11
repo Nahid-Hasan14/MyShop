@@ -1,7 +1,15 @@
+import { useLocation } from "react-router-dom";
 import "./CategoryPage.css"
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 export default function CategoryPage() {
+    const location = useLocation();
+    const products = location.state?.data;
+
+    if(!products){
+       return <h3>No Data Found</h3>
+    }
+
   return (
     <div>
       <div className='container-fluid category-container'>
@@ -54,7 +62,24 @@ export default function CategoryPage() {
                       </ul>
                     </div>
                     <div className="row">
-                        <div className="col-md-3 col-6 product-card-section">
+                        {
+                            products.map(product =>(
+                            <div key={product.id} className="col-md-3 col-6 product-card-section">
+                            <div className="product-card">
+                                <img src= {product.image}/>
+                                <p className="product-title-style pt-2">{product.title.substring(0, 50)}...</p>
+                                <p className="text-body-tertiary">{product.category}</p>
+                                <div className="d-flex gap-3">
+                                  <p><del>$79</del></p>
+                                  <p><b>${product.price}</b></p>
+                                  <p className="text-success">10% OFF</p>
+                                </div>
+                                <p className="text-success">Buy 2 items, save extra ₹20</p>
+                            </div>
+                        </div>
+                            ))
+                        }
+                        {/* <div className="col-md-3 col-6 product-card-section">
                             <div className="product-card">
                                 <img src="./img/dron1.jpg"/>
                                 <p className="product-title-style pt-2">Wild Stone Edge Perfume Eau de Parfum Eau de Parfum - </p>
@@ -131,20 +156,7 @@ export default function CategoryPage() {
                                 </div>
                                 <p className="text-success">Buy 2 items, save extra ₹20</p>
                             </div>
-                        </div>
-                        <div className="col-md-3 col-6 product-card-section">
-                            <div className="product-card">
-                                <img src="./img/dron1.jpg"/>
-                                <p className="product-title-style pt-2">Wild Stone Edge Perfume Eau de Parfum Eau de Parfum - </p>
-                                <p className="text-body-tertiary">For Men & Women</p>
-                                <div className="d-flex gap-3">
-                                  <p><del>$79</del></p>
-                                  <p><b>$75</b></p>
-                                  <p className="text-success">10% OFF</p>
-                                </div>
-                                <p className="text-success">Buy 2 items, save extra ₹20</p>
-                            </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

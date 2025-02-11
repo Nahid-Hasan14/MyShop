@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 import "./BestProducts.css"
 
 const BestProducts = ({data}) => {
@@ -13,12 +14,12 @@ const BestProducts = ({data}) => {
                 <h3 className="py-2">Best Of Cetagory</h3>
                 <div className="row">
                  {data.slice(0, 4).map(product=> {
-                  const {title, price, id, image}= product;
+                  const {title, price, id, image, category}= product;
                   return (
                   <div key={id} className="col-lg-3 col-6 best-products">
                     <div className="border border-secondary-subtle product-item text-center">
-                      <img src= {image} className="img img-fluid" alt="N/A"/>
-                      <h6>{title.substring(0, 45)}...</h6>
+                      <Link to={`/category/${category}`} state={{data: data}}><img src= {image} className="img img-fluid" alt="N/A"/></Link>
+                      <Link to={`/category/${category}`} state={{data}}><h6>{title.substring(0, 45)}...</h6></Link>
                       <p><b>$ {price}</b></p>
                       <button className="btn btn-info">Add to Cart</button>
                     </div>
