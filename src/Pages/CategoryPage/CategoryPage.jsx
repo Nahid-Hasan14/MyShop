@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./CategoryPage.css"
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
@@ -66,8 +66,8 @@ export default function CategoryPage() {
                             products.map(product =>(
                             <div key={product.id} className="col-md-3 col-6 product-card-section">
                             <div className="product-card">
-                                <img src= {product.image}/>
-                                <p className="product-title-style pt-2">{product.title.substring(0, 50)}...</p>
+                                <Link to={`/product-details/${product.id}`} state={{product}}><img src= {product.image}/></Link>
+                                <Link to={`/product-details/${product.id}`} state={{product}}><p className="product-title-style pt-2">{product.title.substring(0, 50)}...</p></Link>
                                 <p className="text-body-tertiary">{product.category}</p>
                                 <div className="d-flex gap-3">
                                   <p><del>$79</del></p>

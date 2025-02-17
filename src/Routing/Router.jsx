@@ -5,6 +5,7 @@ import AboutUs from './../Pages/AboutUs/AboutUs';
 import ContactUs from "./../Pages/ContactUs/ContactUs";
 import CategoryPage from "../Pages/CategoryPage/CategoryPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import SinglePage from './../Pages/SinglePage/SinglePage';
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: "/category/:category",
                 element: <CategoryPage />
+            },
+            {
+                path: "/product-details/:id",
+                element: <SinglePage />
             }
         ]
     }

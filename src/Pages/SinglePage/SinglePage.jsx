@@ -1,8 +1,41 @@
+import { useEffect, useState } from "react";
 import "./SinglePage.css"
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { MdLocalOffer } from "react-icons/md";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 export default function SinglePage() {
+    const {id} = useParams()
+    const [products, setProduct] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(false)
+
+    useEffect(()=>{
+        const apiURl = `https://fakestoreapi.com/products/${id}`;
+
+        axios.get(apiURl)
+        .then(responce => {
+            setProduct(responce.data)
+            setLoading(false)
+        })
+        .catch(error=> {
+            setError(error)
+            setLoading(false)
+        })
+    }, [id])
+
+    if(loading){
+        return <div>Data is Loading........</div>
+      }
+    if(error){
+        return <div>Error: {error.message}</div>
+      }
+    if (!products) {
+        return <div>No product found.</div>;
+      }
+
+    //   console.log(products)
   return (
     <div>
       <div className='container singlePage-container '>
@@ -14,7 +47,7 @@ export default function SinglePage() {
                         <li>Product Details</li>
                     </ul>
                 <div className="img-section singlePage-section border border-primary">
-                    <img src='./img/dron2.jpg'/>
+                    <img src={products.image}/>
                     <div className="more-img" role="button">
                         <img src="./img/dron1.jpg"/>
                         <img src="./img/dron1.jpg"/>
@@ -30,11 +63,11 @@ export default function SinglePage() {
                         <li role="button">Product Details</li>
                     </ul>
                     <h5 className="text-body-tertiary">Category</h5>
-                    <p>TREO All Fresh Premier Glass Tiffin Set of 8, Microwave Safe, Dishwasher safe 6 Containers Lunch Box  (2210 ml)</p>
+                    <p>{products.title}</p>
                     <div className="price-part">
                         <p className="fs-6 text-success pt-3">Special Price</p>
                         <div className="d-flex align-items-center gap-4">
-                         <p className="fs-3">$525</p>
+                         <p className="fs-3">${products.price}</p>
                          <p><del>$600</del></p>
                          <p className="text-success">15% OFF</p>
                         </div>
@@ -49,7 +82,7 @@ export default function SinglePage() {
                     <button className="btn main-btn mt-2">Add to cart</button>
                     <div className="mt-3 pb-3">
                         <h5>Description</h5>
-                        <p className="fs-6">Oliveware Teso Pro Lunch Box is made using only the best quality materials. This Lunch Box is Ideal for office executives and college students, this Lunch Box comes with 3 unique Air-tight and spill proof Stainless Steel containers (290ml, 450ml, 600ml) with Steel Cutlery & Steel Water Bottle(750ml) + Plastic Pickle Box(130ml) that keep food fresh and crisp for hours. This Containers is Microwave Safe (without Lids). The containers have air tight lids which is BPA Free. This will prevent moisture from damaging your cooked food. These lids are also leak-proof so your food will not come out from the container even if its semi-liquid.</p>
+                        <p className="fs-6">{products.description}</p>
                     </div>
                 </div>
             </div>

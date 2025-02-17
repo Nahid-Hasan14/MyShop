@@ -40,6 +40,9 @@
     height: 250px;
     width: 100%;
 }
+.product-card img, .product-title-style{
+    cursor: pointer;
+}
 .product-card p{
     padding: 0;
     margin: 0;
