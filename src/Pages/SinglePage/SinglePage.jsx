@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import "./SinglePage.css"
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+// import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { MdLocalOffer } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Breadcrumbs from "../../Components/Breadcrumbs";
 
 export default function SinglePage() {
     const {id} = useParams()
@@ -42,9 +43,10 @@ export default function SinglePage() {
         <div className='row bg-white'>
             <div className='col-md-5 col-12'>
                     <ul className="d-flex d-md-none gap-3 text-primary list-unstyled mt-3 ps-2" role="button">
-                        <li>Home<MdOutlineKeyboardArrowRight /></li>
+                    <Breadcrumbs />
+                        {/* <li>Home<MdOutlineKeyboardArrowRight /></li>
                         <li>Category<MdOutlineKeyboardArrowRight /></li>
-                        <li>Product Details</li>
+                        <li>Product Details</li> */}
                     </ul>
                 <div className="img-section singlePage-section border border-primary">
                     <img src={products.image}/>
@@ -58,9 +60,10 @@ export default function SinglePage() {
             <div className='col-md-7 col-12'>
                 <div className="productdatils singlePage-section">
                     <ul className="d-none d-md-flex gap-3 text-primary list-unstyled">
-                        <li role="button">Home<MdOutlineKeyboardArrowRight /></li>
+                    <Breadcrumbs />
+                        {/* <li role="button">Home<MdOutlineKeyboardArrowRight /></li>
                         <li role="button">Category<MdOutlineKeyboardArrowRight /></li>
-                        <li role="button">Product Details</li>
+                        <li role="button">Product Details</li> */}
                     </ul>
                     <h5 className="text-body-tertiary">Category</h5>
                     <p>{products.title}</p>

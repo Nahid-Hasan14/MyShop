@@ -6,6 +6,9 @@ import ContactUs from "./../Pages/ContactUs/ContactUs";
 import CategoryPage from "../Pages/CategoryPage/CategoryPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import SinglePage from './../Pages/SinglePage/SinglePage';
+import UserProfile from "../Pages/Profile/UserProfile";
+import OrderPage from "../Pages/Order-Page/OrderPage";
+import MyAddress from "../Pages/MyAddress/MyAddress";
 
 const router = createBrowserRouter([
     {
@@ -15,7 +18,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home />
+                element: <Home />,
             },
             {
                 path: "/about-us",
@@ -32,6 +35,24 @@ const router = createBrowserRouter([
             {
                 path: "/product-details/:id",
                 element: <SinglePage />
+            },
+            {
+                path: "/dashboard",
+                element: <UserProfile />,
+                children: [
+                    {
+                        index: true,
+                        element: <MyAddress />
+                    },
+                    {
+                        path: "my-address",
+                        element: <MyAddress />
+                    },
+                    {
+                        path: "order",
+                        element: <OrderPage />
+                    }
+                ]
             }
         ]
     }

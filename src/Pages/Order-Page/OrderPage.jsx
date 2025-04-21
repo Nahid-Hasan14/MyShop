@@ -4,29 +4,6 @@ const OrderPage = () => {
   return (
     <div>
      <section className='order-section'>
-      <div className='container'>
-        <div className='row mt-5 pt-5'>
-            <div className='col-lg-3'>
-                <div className='order-user'>
-                    <h4> Md Nahid Hasan</h4>
-                    <a className='verified-user'>Verified User</a>
-                  <div className='order-manage-account'>
-                      <h3>Manage My Account</h3>
-                      <ul className='profile-part'>
-                        <li>
-                          My Profile
-                        </li>
-                        <li>
-                          My Address Book
-                        </li>
-                        <li>
-                          My Payment Option
-                        </li>
-                      </ul>
-                </div>
-                </div>
-            </div>
-            <div className='col-lg-9'>
                 <div className='orderPage-heading'>
                     <h3 className='myOrder-heading'>My Order</h3>  
                 <div className='show-order pt-2'>
@@ -82,9 +59,6 @@ const OrderPage = () => {
                 </div>
 
                 </div>
-            </div>
-        </div>
-      </div>
       </section>
     </div>
   )

@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
+  const navigate = useNavigate();
   return (
     <>
       {/* Navbar and Sidebar in a single container */}
@@ -23,9 +24,9 @@ export default function Navbar() {
               {/* Menu Links (Visible in Desktop Only) */}
 
               <div className="navbar-section middle navbar-logo">
-                <a className="navbar-brand" href="#">
+                <NavLink to={"/"} className="navbar-brand" href="#">
                   Softssit
-                </a>
+                </NavLink>
               </div>
 
               <div className="collapse navbar-collapse d-none d-lg-block ">
@@ -101,9 +102,9 @@ export default function Navbar() {
                   </a>
                   <ul className="dropdown-menu">
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <NavLink to={'/dashboard'} className="dropdown-item">
                         Dashboard
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
                       <a className="dropdown-item" href="#">
@@ -161,22 +162,22 @@ export default function Navbar() {
             <div className="offcanvas-body">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link text-white" href="#">
+                  <NavLink onClick={()=> navigate('/')} className="nav-link text-white" data-bs-dismiss="offcanvas">
                     Home
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-white" href="#">
+                  <NavLink onClick={()=> navigate('/about-us')} className="nav-link text-white" data-bs-dismiss="offcanvas">
                     About
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-white" href="#">
+                  <NavLink onClick={()=> navigate('/contact-us')} className="nav-link text-white" data-bs-dismiss="offcanvas">
                     Contact
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-white" href="#">
+                  <a className="nav-link text-white" data-bs-dismiss="offcanvas">
                     Shop
                   </a>
                 </li>

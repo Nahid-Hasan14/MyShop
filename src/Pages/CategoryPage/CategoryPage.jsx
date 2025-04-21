@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import "./CategoryPage.css"
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import Breadcrumbs from "../../Components/Breadcrumbs";
 
 export default function CategoryPage() {
     const location = useLocation();
@@ -49,8 +50,9 @@ export default function CategoryPage() {
                 <div className="category-section">
                     <div className="page-reader">
                         <ul>
-                            <li role="button">Home <MdOutlineKeyboardArrowRight /></li>
-                            <li role="button">Category</li>
+                        <Breadcrumbs />
+                            {/* <li role="button">Home <MdOutlineKeyboardArrowRight /></li>
+                            <li role="button">Category</li> */}
                         </ul>
                     </div>
                     <div className="py-2"><span><b>Category Name</b>  (Showing 1 - 40 products of 47,910 products)</span></div>
